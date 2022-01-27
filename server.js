@@ -1,14 +1,23 @@
 const express=require('express')
 const dotenv=require('dotenv')
+const routes=require('./routes/routes')
+const mpesa=require('./routes/mpesa')
+const cors=require('cors')
+const bodyparser=require('body-parser')
+
 
 dotenv.config()
 const app=express()
 
+app.use(bodyparser.urlencoded({extended:true}))
+app.use(bodyparser.json())
 
-app.get('/',(req,res)=>{
-    res.send("hello world")
-})
+app.use(cors())
+app.use(express.json())
 
+
+app.use('/',routes)
+app.use('/mpesa',mpesa)
 
 
 
