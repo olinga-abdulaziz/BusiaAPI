@@ -1,10 +1,11 @@
 const express=require('express')
 const dotenv=require('dotenv')
-const routes=require('./routes/routes')
+const auth=require('./routes/auth')
 const mpesa=require('./routes/mpesa')
 const dbconnection=require('./database/db')
 const cors=require('cors')
 const bodyparser=require('body-parser')
+const session=require('express-session')
 
 
 dotenv.config()
@@ -18,8 +19,9 @@ app.use(bodyparser.json())
 app.use(cors())
 app.use(express.json())
 
+app.use(session({secret: 'mySecret', resave: false, saveUninitialized: false}));
 
-app.use('/',routes)
+app.use('/auth',auth)
 app.use('/mpesa',mpesa)
 
 
