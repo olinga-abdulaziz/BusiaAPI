@@ -9,7 +9,7 @@ router.post('/callback',(req,res)=>{
     res.send(req.body)
 })
 
-router.get('/test',()=>{
+router.get('/test',(req,res)=>{
     res.send('it works baaan')
 })
 
