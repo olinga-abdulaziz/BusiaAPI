@@ -52,7 +52,7 @@ exports.stkpush=(req,res) =>{
         "Password":password(),    
         "Timestamp":timestamp,    
         "TransactionType": "CustomerPayBillOnline",    
-        "Amount":"10",    
+        "Amount":"1",    
         "PartyA":"254769210601",    
         "PartyB":"174379",    
         "PhoneNumber":"254769210601",    
