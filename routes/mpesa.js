@@ -9,6 +9,10 @@ router.post('/callback',(req,res)=>{
     res.send(req.body)
 })
 
+router.get('/test',()=>{
+    res.send('it works baaan')
+})
+
 
 module.exports=router
 
