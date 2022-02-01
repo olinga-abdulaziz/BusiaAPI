@@ -10,7 +10,7 @@ router.post('/callback',(req,res)=>{
 })
 
 router.get('/test',(req,res)=>{
-    res.send('it works baaan')
+    res.send(`it works bana ${process.env.consumerkey}`)
 })
 
 
