@@ -6,7 +6,7 @@ const dbconnection=require('./database/db')
 const cors=require('cors')
 const bodyparser=require('body-parser')
 const session=require('express-session')
-
+const router=require('./routes/club')
 
 dotenv.config()
 const app=express()
@@ -23,6 +23,7 @@ app.use(session({secret: 'mySecret', resave: false, saveUninitialized: false}));
 
 app.use('/auth',auth)
 app.use('/mpesa',mpesa)
+app.use('/club',router)
 
 
 
