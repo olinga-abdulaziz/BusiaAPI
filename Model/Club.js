@@ -6,6 +6,11 @@ const ClubSchema=mongoose.Schema({
         required:true,
         uppercase:true
     },
+    abriviation:{
+        type:String,
+        required:true,
+        uppercase:true
+    },
     home:{
         type:String,
         required:true,

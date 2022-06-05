@@ -10,6 +10,7 @@ router.get('/clubs',async(req,res)=>{
 router.post('/add', async(req,res)=>{
     const club=new Club({
         clubname:req.body.clubname,
+        abriviation:req.body.abriviation,
         home:req.body.home,
         stadium:req.body.stadium,
         description:req.body.description,
