@@ -33,6 +33,7 @@ router.get('/weeks',async(req,res)=>{
     const weeks=await Week.find();
     res.json(weeks)
 })
+
 router.post('/add-week',async(req,res)=>{
     const week=new Week({
         week:req.body.week,
