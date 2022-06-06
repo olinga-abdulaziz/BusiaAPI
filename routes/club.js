@@ -35,7 +35,7 @@ router.get('/weeks',async(req,res)=>{
 })
 
 router.get('/week/:week',async(req,res)=>{
-    const games=await Game.findById({week:req.params.week})
+    const games=await Game.find({week:req.params.week})
     res.json(games)
 })
 
