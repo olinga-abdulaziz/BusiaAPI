@@ -34,6 +34,11 @@ router.get('/weeks',async(req,res)=>{
     res.json(weeks)
 })
 
+router.get('/week/:week',async(req,res)=>{
+    const games=await Game.findById({week:req.params.week})
+    res.json(games)
+})
+
 router.post('/add-week',async(req,res)=>{
     const week=new Week({
         week:req.body.week,
