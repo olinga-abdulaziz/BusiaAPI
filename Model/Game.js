@@ -27,11 +27,18 @@ const GameModel=new mongoose.Schema({
     },
     htr:{
         type:Number,
-        required:false
+        required:false,
+        default:0
     },
     atr:{
         type:Number,
-        required:false
+        required:false,
+        default:0
+    },
+    played:{
+        type:Boolean,
+        required:true,
+        default:false
     }
 })
 
