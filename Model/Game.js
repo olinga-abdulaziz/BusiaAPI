@@ -24,6 +24,14 @@ const GameModel=new mongoose.Schema({
     time:{
         type:String,
         required:true
+    },
+    hometeamresults:{
+        type:String,
+        required:false
+    },
+    awayteamresults:{
+        type:String,
+        required:false
     }
 })
 
