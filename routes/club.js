@@ -10,6 +10,11 @@ router.get('/clubs',async(req,res)=>{
     res.json(clubs)
 })
 
+router.get('/club/:clubname',async(req,res)=>{
+    const games=await Club.find({clubname:req.params.clubname})
+    res.json(games)
+})
+
 
 router.post('/add-game',async(req,res)=>{
     const game=new Game({
@@ -72,7 +77,7 @@ router.post('/add', async(req,res)=>{
     }
 })
 
-
+// update table
 router.put('/game-table/:id',async(req,res)=>{
     try {
         const results=await Club.updateOne({_id:req.params.id},{$set:{p:req.body.p,w:req.body.w,d:req.body.d,l:req.body.l,f:req.body.f,gd:req.body.gd,pts:req.body.pts,ga:req.body.ga}})
@@ -83,7 +88,7 @@ router.put('/game-table/:id',async(req,res)=>{
 })
 
 
-
+// update results
 router.put('/game/:id',async(req,res)=>{
     try {
         const results=await Game.updateOne({_id:req.params.id},{$set:{htr:req.body.htr,atr:req.body.atr}})
