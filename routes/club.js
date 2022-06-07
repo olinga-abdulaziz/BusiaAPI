@@ -73,6 +73,15 @@ router.post('/add', async(req,res)=>{
 })
 
 
+router.put('/game/:id',async(req,res)=>{
+    try {
+        const results=await Game.updateOne({_id:req.params.id},{$set:{htr:req.body.htr,atr:req.body.atr}})
+        res.json({message:"Updated successfully"}) 
+    } catch (err) {
+        console.log(err);
+    }
+})
+
 
 
 module.exports=router
