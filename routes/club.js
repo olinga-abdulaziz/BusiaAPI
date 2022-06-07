@@ -19,6 +19,8 @@ router.post('/add-game',async(req,res)=>{
         stadium:req.body.stadium,
         date:req.body.date,
         time:req.body.time,
+        htr:req.body.htr,
+        atr:req.body.atr,
     })
 
     try {

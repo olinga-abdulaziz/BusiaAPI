@@ -25,11 +25,11 @@ const GameModel=new mongoose.Schema({
         type:String,
         required:true
     },
-    hometeamresults:{
+    htr:{
         type:String,
         required:false
     },
-    awayteamresults:{
+    atr:{
         type:String,
         required:false
     }
