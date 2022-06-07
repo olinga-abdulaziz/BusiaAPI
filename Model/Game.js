@@ -26,11 +26,11 @@ const GameModel=new mongoose.Schema({
         required:true
     },
     htr:{
-        type:String,
+        type:Number,
         required:false
     },
     atr:{
-        type:String,
+        type:Number,
         required:false
     }
 })
