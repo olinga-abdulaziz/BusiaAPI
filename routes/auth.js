@@ -16,9 +16,9 @@ router.post('/register',async (req,res)=>{
     const hashedPassword=await bcrypt.hash(req.body.password,salt)
 
     const member=new Member({
-        fullname:req.body.fullname,
+        names:req.body.fullname,
         phone:req.body.phone,
-        username:req.body.username,
+        email:req.body.email,
         password:hashedPassword,
     })
 
@@ -30,31 +30,31 @@ router.post('/register',async (req,res)=>{
     }
 })
 
-router.post('/login', async(req,res)=>{
-    //comparing passoword and asign token
-    try {
-        //compare passowrd
-        const user=await Member.findOne({username:req.body.username})
-        if(user){
-            const credentials=await bcrypt.compare(req.body.password,user.password)
-        if(credentials){
-            // asign token
-            const token=jwt.sign({_id:user._id},process.env.SECRETE_KEY)
-            res.header('auth-token',token)
-            req.session.token=token
-            res.send('login successfully')
-        }else{
-            res.send('login failed')
-            return
-        }
-        }else{
-            res.send("no such user")
-        }
+// router.post('/login', async(req,res)=>{
+//     //comparing passoword and asign token
+//     try {
+//         //compare passowrd
+//         const user=await Member.findOne({username:req.body.username})
+//         if(user){
+//             const credentials=await bcrypt.compare(req.body.password,user.password)
+//         if(credentials){
+//             // asign token
+//             const token=jwt.sign({_id:user._id},process.env.SECRETE_KEY)
+//             res.header('auth-token',token)
+//             req.session.token=token
+//             res.send('login successfully')
+//         }else{
+//             res.send('login failed')
+//             return
+//         }
+//         }else{
+//             res.send("no such user")
+//         }
         
-    } catch (err) {
-        console.log(err);
-    }
-})
+//     } catch (err) {
+//         console.log(err);
+//     }
+// })
 
 router.get('/logininfo',checkuser,currentUser,(req,res)=>{
     let ses=req.session.user

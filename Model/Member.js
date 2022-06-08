@@ -2,7 +2,7 @@ const mongoose=require('mongoose')
 
 
 const MemberSchema=new mongoose.Schema({
-    fullname:{
+    names:{
         type:String,
         required:true,
         uppercase:true
@@ -11,7 +11,8 @@ const MemberSchema=new mongoose.Schema({
         type:String,
         required:true
     },
-    username:{
+
+    email:{
         type:String,
         required:true
     },
