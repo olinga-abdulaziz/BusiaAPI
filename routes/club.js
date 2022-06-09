@@ -59,29 +59,6 @@ router.post('/add-week',async(req,res)=>{
     }
 })
 
-router.post('/TheWeek',async(req,res)=>{
-    const theweek=new Theweek({
-        week:req.body.week,
-    })
-
-    try {
-        const saveweek=await theweek.save()
-        res.json({'message':'Week Added successfully'})
-    } catch (err) {
-        console.log(err);
-    }
-})
-
-router.put('/TheWeek/:id',async(req,res)=>{
-
-    try {
-        const saveweek=await Theweek.updateOne({_id:req.params.id},{$set:{week:req.body.week}})
-        res.json({'message':'Week Added successfully'})
-    } catch (err) {
-        console.log(err);
-    }
-})
-
 
 
 router.post('/add', async(req,res)=>{
