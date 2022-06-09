@@ -80,7 +80,7 @@ router.post('/add', async(req,res)=>{
 // update table
 router.put('/game-table/:clubname',async(req,res)=>{
     try {
-        const results=await Club.updateOne({clubname:req.params.clubname},{$set:{p:req.body.p,w:req.body.w,d:req.body.d,l:req.body.l,f:req.body.f,gd:req.body.gd,pts:req.body.pts,ga:req.body.ga}})
+        const results=await Club.updateOne({clubname:req.params.clubname},{$set:{p:req.body.p,w:req.body.w,d:req.body.d,l:req.body.l,f:req.body.f,pts:req.body.pts,ga:req.body.ga}})
         res.json({message:"Updated Successfully"}) 
     } catch (err) {
         console.log(err);

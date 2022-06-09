@@ -57,12 +57,6 @@ const ClubSchema=mongoose.Schema({
         default:0
 
     },
-    gd:{
-        type:Number,
-        required: true,
-        default:0
-
-    },
     pts:{
         type:Number,
         required: true,
