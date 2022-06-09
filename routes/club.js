@@ -3,7 +3,7 @@ const router=express.Router()
 const Club=require('../Model/Club')
 const Game=require('../Model/Game')
 const Week = require('../Model/Week')
-const Theweek=require('../Model/Theweek')
+const TheWeek =require('../Model/TheWeek')
 
 router.get('/clubs',async(req,res)=>{
     const clubs=await Club.find();
@@ -60,17 +60,18 @@ router.post('/add-week',async(req,res)=>{
 })
 
 router.post('/TheWeek',async(req,res)=>{
-    const Theweeks=new Theweek({
+    const theweek=new Theweek({
         week:req.body.week,
     })
 
     try {
-        const saveweek=await Theweeks.save()
+        const saveweek=await theweek.save()
         res.json({'message':'Week Added successfully'})
     } catch (err) {
         console.log(err);
     }
 })
+
 router.put('/TheWeek/:id',async(req,res)=>{
 
     try {
