@@ -60,12 +60,12 @@ router.post('/add-week',async(req,res)=>{
 })
 
 router.post('/TheWeek',async(req,res)=>{
-    const week=new Theweek({
+    const Theweeks=new Theweek({
         week:req.body.week,
     })
 
     try {
-        const saveweek=await Theweek.save()
+        const saveweek=await Theweeks.save()
         res.json({'message':'Week Added successfully'})
     } catch (err) {
         console.log(err);
