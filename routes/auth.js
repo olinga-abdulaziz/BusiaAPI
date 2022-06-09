@@ -6,7 +6,7 @@ const jwt=require('jsonwebtoken')
 const { auth,currentUser,checkuser} =require('../AuthControllers/authMiddleware')
 
 router.get('/',(req,res)=>{
-    res.send('hello world it works walai ndio hii')
+    res.json({'code':'FKFDATALINK@4040'})
 })
 
 router.post('/register',async (req,res)=>{
